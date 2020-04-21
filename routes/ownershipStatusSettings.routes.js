@@ -9,7 +9,7 @@ router.get('/:id', ownStatusController.getOneStatus)
 //add one
 router.post('/', ownStatusController.addStatus)
 //delete one
-router.delete('/', ownStatusController.deleteStatus)
+router.delete('/:id', ownStatusController.deleteStatus)
 //update
 router.put('/', ownStatusController.updateStatus)
 

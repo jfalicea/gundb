@@ -1,4 +1,4 @@
-var db = require('../bin/db')
+var db = require('../../bin/db')
 
 
 const getCaliber = async (req,res,next)=>{
@@ -19,7 +19,7 @@ const getOneCaliber = async (req,res,next)=>{
 
 const deleteCaliber = async (req, res, next)=>{
     const dbQuery = `DELETE FROM caliber WHERE id=$1;`; 
-    const caliberDBResponse = await db.query(dbQuery, [parseInt(req.body.caliber_id)]);
+    const caliberDBResponse = await db.query(dbQuery, [parseInt(req.params.id)]);
     res.json('ok')
 };
 

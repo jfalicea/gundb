@@ -5,7 +5,7 @@ var manufactureController = require('../controller/manufactureSetting.controller
 router.get('/',manufactureController.getManufacture)
 router.get('/:id ',manufactureController.getOneManufacture)
 router.post('/',manufactureController.addManufacture)
-router.delete('/',manufactureController.deleteManufacture)
+router.delete('/:id',manufactureController.deleteManufacture)
 router.put('/',manufactureController.updateManufacture)
 
 module.exports = router

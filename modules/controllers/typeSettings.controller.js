@@ -19,7 +19,7 @@ const getOneGunType = async (req,res,next)=>{
 
 const deleteGunType = async (req, res, next)=>{
     const dbQuery = `DELETE FROM gun_type WHERE id=$1;`; 
-    const {id} = req.body.id
+    const {id} = req.params.id
     const gunTypeDBResponse = await db.query(dbQuery, [parseInt(id)]);
     res.json('ok')
 };

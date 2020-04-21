@@ -1,4 +1,4 @@
-var db = require('../bin/db')
+var db = require('../../bin/db')
 
 
 const getManufacture = async (req,res,next)=>{
@@ -20,7 +20,7 @@ const getOneManufacture = async (req,res,next)=>{
 const deleteManufacture = async (req, res, next)=>{
     const dbQuery = `DELETE FROM manufacture WHERE id=$1;`; 
     const {id} = req.body 
-    const manufactureDBResponse = await db.query(dbQuery, [parseInt(req.body.id)]);
+    const manufactureDBResponse = await db.query(dbQuery, [parseInt(req.params.id)]);
     res.json('ok')
 };
 

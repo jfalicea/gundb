@@ -20,7 +20,7 @@ const getOneStatus = async (req,res,next)=>{
 const deleteStatus = async (req, res, next)=>{
     const dbQuery = `DELETE FROM ownership_status WHERE id=$1;`; 
     const {id} = req.body 
-    const statusDBResponse = await db.query(dbQuery, [parseInt(req.body.id)]);
+    const statusDBResponse = await db.query(dbQuery, [parseInt(req.params.id)]);
     res.json('ok')
 };
 

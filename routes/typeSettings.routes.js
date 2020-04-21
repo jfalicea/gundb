@@ -2,19 +2,21 @@ var express = require('express');
 var router = express.Router();
 var typeControls = require('../controller/typeSettings.controller');
 
-//get all calibers
+//get all Gun Type
+
 router.get('/', typeControls.getGunType);
 
-//get one caliber 
+//get one Gun Type
+
 router.get('/:id', typeControls.getOneGunType);
 
-//delete a caliber
-router.delete('/', typeControls.deleteGunType);
+//delete a Gun Type
+router.delete('/:id', typeControls.deleteGunType);
 
-//insert caliber
+//insert Gun Type
 router.post('/add', typeControls.addGunType)
 
-//update caliber
+//update Gun Type
 router.put('/', typeControls.updateGunType)
 
 module.exports = router;
