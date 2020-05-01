@@ -1,0 +1,11 @@
+# GunDB 
+
+
+### .env file 
+
+```
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=gundb
+
+```

@@ -4,8 +4,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet')
 
-var securityRouter = require('./routes/security.routes')
-var caliberRouter = require('./modules/controllers/caliberModule/caliberSettings.routes')
+var securityRouter = require('./routes/security.routes');
+var caliberRouter = require('./modules/caliber/caliber.routes');
+var manufactureRouter = require('./modules/manufacturer/manufacture.routes');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 // var ownershipStatusSettingsRouter = require('./routes/ownershipStatusSettings.routes')
@@ -33,6 +34,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/users', usersRouter);
 app.use('/caliber', caliberRouter)
 // app.use('/ownershipstatus', ownershipStatusSettingsRouter)
-// app.use('/manufacture', manufactureRouter)
+app.use('/manufacturer', manufactureRouter)
 // app.use('/type', typeSettingRouter)
 module.exports = app;

@@ -2,14 +2,14 @@ var db = require('../bin/db')
 
 
 const getStatus = async (req,res,next)=>{
-    const dbQuery = `SELECT * FROM ownership_status;`; 
+    const dbQuery = ``; 
     const statusDBResponse = await db.any(dbQuery); 
     res.json(statusDBResponse)
 };
 
 const getOneStatus = async (req,res,next)=>{
     console.log(req.params.id)
-    const dbQuery = `SELECT * FROM ownership_status WHERE id=$1;`; 
+    const dbQuery = ""
     const statusDBResponse = await db.any(dbQuery,[req.params.id]); 
     if(statusDBResponse.length === 0){
         res.json('nothing in the database.')
