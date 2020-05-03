@@ -1,4 +1,4 @@
-var manufacturer = require('./manufacture.service')
+wvar manufacturer = require('./manufacture.service')
 
 
 const getManufacture = async (req,res,next)=>{
@@ -28,7 +28,7 @@ const updateManufacture = async (req, res, next)=>{
 const deleteManufacture = async (req, res, next)=>{
     const {manufacturerID} = parseInt(req.params.id); 
     const manufacturerResp = await manufacturer.deleteManufacturer(manufacturerID); 
-    res.status(200).json(manufacturerResp); 
+    res.status(200).json('delete'); 
 };
 
 

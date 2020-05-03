@@ -1,9 +1,9 @@
 const caliberQuery = {
-        getAllCalibers : `SELECT * FROM caliber;`,
-        getCaliberByID : `SELECT * FROM caliber WHERE id=$1;`,
-        insertCaliber: `INSERT INTO caliber (caliber, description) VALUES ($1,$2) returning id`, 
-        updateCaliber: `UPDATE caliber SET caliber=$1, description=$2 WHERE id=$3`, 
-        deleteCaliber: `DELETE FROM caliber WHERE id=$1`
+    getAllCalibers : `SELECT * FROM caliber;`,
+    getCaliberByID : `SELECT * FROM caliber WHERE id=$1;`,
+    insertCaliber: `INSERT INTO caliber (caliber, description) VALUES ($1,$2) returning id`, 
+    updateCaliber: `UPDATE caliber SET caliber=$1, description=$2 WHERE id=$3`, 
+    deleteCaliber: `DELETE FROM caliber WHERE id=$1`
 };
 
 const manufacturerQuery = {
@@ -32,9 +32,18 @@ const gunTypeQuery = {
 };
 
 
+const ownershipStatusQuery = {
+    getAllownershipStatus : `SELECT * FROM ownership_status`, 
+    getOwnershipStatusByID : `SELECT * FROM ownership_status WHERE id=$1`,
+    insertOwnershipStatus : `INSERT INTO ownership_status (status, description) VALUES ($1,$2) returning id`, 
+    updateOwnershipStatus : `UPDATE ownership_status SET status=$1, description=$2 WHERE id=$3`, 
+    deleteOwnershipStatus : `DELETE FROM ownership_status WHERE id=$1;` 
+}; 
+
 module.exports = {
     caliberQuery,
     manufacturerQuery, 
     statusQuery, 
-    gunTypeQuery
-}
+    gunTypeQuery,
+    ownershipStatusQuery
+};

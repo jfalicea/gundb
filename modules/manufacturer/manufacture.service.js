@@ -1,5 +1,5 @@
 var db = require('../../bin/db')
-var {manufacturerQuery} = require('../../shared/queryService')
+var { manufacturerQuery } = require('../../shared/queryService')
 
 
 const manufacturerService = {
