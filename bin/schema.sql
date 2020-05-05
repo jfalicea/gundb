@@ -44,5 +44,6 @@ CREATE TABLE gun (
     image text,
     documenation text,
     gun_type_id integer REFERENCES gun_type(id),
-    isNFA boolean
+    isNFA boolean, 
+    notes, text
 );

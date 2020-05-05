@@ -3,39 +3,39 @@ var { gunTypeQuery } = require('../../shared/queryService');
 
 const gunTypeService = {
 
-    getAllGunType : async function ( ){
+    getAllGunType :  function ( ){
         const dbQuery = gunTypeQuery.getAllGunTypes; 
-        const gunTypeDBResp = await db.query(dbQuery); 
+        const gunTypeDBResp =  db.query(dbQuery); 
         return gunTypeDBResp; 
     }, 
 
-    getGunTypeByID : async function ( gunTypeID ){
+    getGunTypeByID :  function ( gunTypeID ){
         const dbQuery = gunTypeQuery.getGunTypeByID; 
-        const gunTypeDBResp = await db.query(dbQuery, [pareInt(gunTypeID)]);
+        const gunTypeDBResp =  db.query(dbQuery, [pareInt(gunTypeID)]);
         if(gunTypeDBResp.length === 0){
             return 'Nothing in database.'; 
         }; 
         return gunTypeDBResp;
     }, 
 
-    addGunType : async function ( gunType, gunTypeDescription ){
+    addGunType :  function ( gunType, gunTypeDescription ){
         const dbQuery = gunTypeQuery.insertGunType; 
-        const gunTypeDBResp = await db.query(dbQuery, [gunType, gunTypeDescription]); 
+        const gunTypeDBResp =  db.query(dbQuery, [gunType, gunTypeDescription]); 
         if(gunTypeDBResp.length === 0){
             return "failure";
         }; 
         return 'Manufacture has been added.'
     }, 
 
-    updateGunType : async function (gunTypeID, gunType, description){
+    updateGunType :  function (gunTypeID, gunType, description){
         const dbQuery = gunTypeQuery.updateGunType; 
-        const gunTypeDBResp = await db.query(dbQuery, [gunType, description, parseInt(gunTypeID)]);
+        const gunTypeDBResp =  db.query(dbQuery, [gunType, description, parseInt(gunTypeID)]);
         return 'the gun type was updated.'; 
     }, 
 
-    deleteGunType : async function ( gunTypeID ){
+    deleteGunType :  function ( gunTypeID ){
         const dbQuery = gunTypeQuery.deleteGunType; 
-        const gunTypeDBResp = await db.query(dbQuery, [parseInt(gunTypeID)])
+        const gunTypeDBResp =  db.query(dbQuery, [parseInt(gunTypeID)])
         return 'Ok'; 
     }
 

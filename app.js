@@ -32,11 +32,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/', securityRouter)
-// app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/caliber', caliberRouter);
 app.use('/guntype', gunTypeRouter);
 app.use('/manufacturer', manufactureRouter);
 app.use('/ownershipstatus', ownershipStatusRouter);
+
 
 module.exports = app;
