@@ -1,4 +1,4 @@
-wvar manufacturer = require('./manufacture.service')
+var manufacturer = require('./manufacture.service')
 
 
 const getManufacture = async (req,res,next)=>{
