@@ -47,7 +47,7 @@ const gunCatalogQuery = {
                     INNER JOIN caliber ON caliber.id = caliber_id
                     INNER JOIN ownership_status ON  ownership_status.id = ownership_status_id
                     INNER JOIN gun_type ON gun_type.id = gun_type_id
-                    ORDER BY ownership_status.status ASC; `,
+                    ORDER BY ownership_status.status ASC;`,
     getGunByID : `SELECT gun.id, manufacture.manufacture_name, caliber.caliber, ownership_status.status, gun_type.type, gun.documenation, gun.image,isNFA, gun.notes user FROM gun 
                     INNER JOIN manufacture ON manufacture_id = manufacture.id
                     INNER JOIN users ON users.id = user_id
@@ -59,8 +59,7 @@ const gunCatalogQuery = {
     insertGun : `INSERT INTO gun (serial_number, manufacture_id, model, user_id, ownership_status_id, caliber_id, gun_type_id, isnfa, notes) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id, serial_number, manufacture_id, model, owner_id, ownership_status_id, caliber_id, image, documenation, gun_type_id, isnfa;`,
     updateGun : `UPDATE gun SET serial_number=$1, manufacture_id=$2, model=$3, user_id=$4, ownership_status_id=$5, caliber_id=6, gun_type_id=$7, isnfa=$8, notes=$9`,
     deleteGun : `DELETE FROM gun WHERE id=$1;`
-
-}
+};
 
 
 

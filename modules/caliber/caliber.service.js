@@ -3,9 +3,10 @@ var { caliberQuery } = require('../../shared/queryService')
 
 
 const caliberService = {
-    getCalibers :  function (){
+    getCalibers :   function (){
         const dbQuery = caliberQuery.getAllCalibers; 
         const caliberDBResponse =  db.any(dbQuery);
+        console.log("caliberDBResponse")
         return caliberDBResponse;
     }, 
 

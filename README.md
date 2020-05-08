@@ -3,9 +3,4 @@
 
 ### .env file 
 
-```
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=gundb
-
-```
+DB_Connection_String = postgres//USERNAME@PASSWORD@HOST:5432/gundb

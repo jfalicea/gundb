@@ -3,7 +3,7 @@ var { gunCatalogQuery } = require('../../shared/queryService')
 
 const gunCatalogService ={
 
-    getAllgGuns :  function () {
+    getAllGuns :  function () {
         const dbQuery = gunCatalogQuery.getAllguns; 
         const gunDBResp =  db.query(dbQuery); 
         return gunDBResp

@@ -4,12 +4,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var helmet = require('helmet')
 
-var securityRouter = require('./routes/security.routes');
 var caliberRouter = require('./modules/caliber/caliber.routes');
 var manufactureRouter = require('./modules/manufacturer/manufacture.routes');
 var gunTypeRouter = require('./modules/gunType/gunType.routes');
 var ownershipStatusRouter = require('./modules/ownershipStatus/ownershipStatus.routes'); 
-
+var gunRouter = require('./modules/gun/gun.routes');
+const healthCheckRouter = require('./modules/healthCheck/healthCheck.routes')
+// var securityRouter = require('./routes/security.routes');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
@@ -37,6 +38,7 @@ app.use('/caliber', caliberRouter);
 app.use('/guntype', gunTypeRouter);
 app.use('/manufacturer', manufactureRouter);
 app.use('/ownershipstatus', ownershipStatusRouter);
-
+app.use('/gun', gunRouter);
+app.use('/healthcheck', healthCheckRouter);
 
 module.exports = app;
